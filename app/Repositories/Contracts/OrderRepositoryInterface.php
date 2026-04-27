@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Repositories\Contracts;
+
+use App\Models\Order;
+use Illuminate\Database\Eloquent\Collection;
+
+interface OrderRepositoryInterface
+{
+    public function all(): Collection;
+
+    public function findById(int $id): ?Order;
+
+    public function create(array $data): Order;
+
+    public function updateStatus(int $id, string $status, array $extra = []): Order;
+}
